@@ -1,0 +1,39 @@
+<h2>オセロ</h2>
+<canvas id="map" width="500" height="500"></canvas>
+
+<script>
+
+onload = function() {
+	initialize();
+};
+
+function initialize() {
+
+	var canvas = document.getElementById('map');
+	if ( ! canvas || ! canvas.getContext ) { return false; }
+	var ctx = canvas.getContext('2d');
+	ctx.fillStyle = "#008000" 
+
+		ctx.beginPath();
+
+	ctx.fillRect(20, 20, 500, 500);
+	var width = canvas.getAttribute('width');
+	var height = canvas.getAttribute('height');
+
+	ctx.beginPath();
+
+	for (var i = 1; i < 9; i++) {
+		ctx.moveTo(20+width/8*i, 20);
+		ctx.lineTo(20+width/8*i, height);
+		ctx.moveTo(20, 20+height/8*i);
+		ctx.lineTo(width, 20+height/8*i);
+	}
+		ctx.stroke();
+}
+function game(){
+
+}
+
+
+
+</script>
